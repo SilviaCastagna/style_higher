@@ -29,10 +29,9 @@
 
 
 
+<ul>
 
-<p> <% @items.limit(8).each do |item| %>
-  <%= item.title %>
+</ul>
+<% @items.limit(8).each do |item| %>
+ <li> <%= item.title %></li>
   <% end %>
-</p>
-
-
