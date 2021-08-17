@@ -11,9 +11,8 @@ class BookingsController < ApplicationController
     redirect_to item_path(@item)
   end
 
-
-
-
-
+  def index
+    @bookings = Booking.all
+  end
 
 end
