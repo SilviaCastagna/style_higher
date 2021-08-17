@@ -1,3 +1,4 @@
+
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <a class="navbar-brand" href="#tobecodedtohomepage">
     <img src="#ourlogohere.jpg" />
@@ -27,5 +28,11 @@
 </div>
 
 
-<h1>Style Higher</h1>
-<h2>Your one-stop shop for stylish hire needs</h2>
+
+
+<p> <% @items.limit(8).each do |item| %>
+  <%= item.title %>
+  <% end %>
+</p>
+
+
