@@ -1,37 +1,55 @@
 
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <a class="navbar-brand" href="#tobecodedtohomepage">
-    <img src="#ourlogohere.jpg" />
+   <%= cl_image_tag("parker-burchfield-tvG4WvjgsEY-unsplash_mvgysz", class: "avatar")%>
 </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Hire Out</a>
+        <a class="nav-link" href="#createnewitem">Upload</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Hire In</a>
+        <a class="nav-link" href="#showindex">Discover</a>
       </li>
       <li class="nav-item dropdown">
-        <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="#useravatar" />
+  <a href="#userdropdownmenu">
+  <%= cl_image_tag("parker-burchfield-tvG4WvjgsEY-unsplash_mvgysz", class: "avatar dropdown-toggle" )%>
+
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Fly</a>
+          <a class="dropdown-item" href="#">Bookings</a>
           <a class="dropdown-item" href="#">Log Out</a>
         </div>
+        </a>
       </li>
     </ul>
   </div>
 </div>
-
-
-
-<ul>
-
-</ul>
-<% @items.limit(8).each do |item| %>
- <li> <%= item.title %></li>
+  <div class="mybanner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://unsplash.com/photos/tvG4WvjgsEY);">
+    <div class="container">
+      <h1>Style Higher provides <strong>clothes & accessories</strong> to <strong>image-conscious people</strong>.</h1>
+      <p>Reinvent your look without spending a fortune.</p>
+      <%# <a class="btn btn-flat" href="#">Find out more</a> %>
+    </div>
+  </div>
+</div>
+<p> <% @items.limit(8).each do |item| %>
+  <%= item.title %>
   <% end %>
+</p>
+  </body>
+</html>
+
+<%# ###/former user avatar dropdown/### %>
+<%# <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="stylehigher.jpg" alt="user avatar"/> %>

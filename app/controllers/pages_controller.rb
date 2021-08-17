@@ -3,4 +3,6 @@ class PagesController < ApplicationController
     @items = Item.all
   end
 
+  def about
+  end
 end
