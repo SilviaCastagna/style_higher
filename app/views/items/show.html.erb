@@ -20,3 +20,4 @@
   <strong>user mail:</strong>
   <%= @item.user.email %>
 </p>
+<%= link_to "book now", item_bookings_path(@item), method: :post %>
