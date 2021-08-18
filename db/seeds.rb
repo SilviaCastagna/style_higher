@@ -22,7 +22,7 @@ Item.create!(title: "Used undies", description: "Smell fine, not like your old s
 Item.create!(title: "Smelly shirt", description: "Never washed, who has time to wash tshir in 2021? not me", brand: "Buma", user: user_new)
 # ]
 
-item_photos_new = Item_photos.create!(image_url:"https://source.unsplash.com/random" item = item_new)
+item_photos_new = Item_photos.create!(image_url: "https://source.unsplash.com/random" item_id = "11")
 
 
 # [shoes, sun_glasses, jacket, undies, tshirt].each do |attributes|
