@@ -6,11 +6,23 @@
       <%# <a class="btn btn-flat" href="#">Find out more</a> %>
     </div>
   </div>
-<p> <% @items.limit(8).each do |item| %>
-  <%= link_to item.title, item_path(item) %>
-  <% end %>
-</p>
-
 
 <%# ###/former user avatar dropdown/### %>
 <%# <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="stylehigher.jpg" alt="user avatar"/> %>
+
+
+
+<div class="container">
+  <div class="card-container">
+      <% @items.limit(3).each do |item| %>
+      <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"><%= item.title %></h5>
+        <p class="card-text"><%= item.description %></p>
+        <%= link_to 'Show', item, class: "btn btn-success"%>
+      </div>
+    </div>
+      <% end %>
+  </div>
+</div>
