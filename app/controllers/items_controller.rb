@@ -19,7 +19,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to @item
     else
-    raise
+
     end
   end
 
