@@ -7,7 +7,7 @@
     </div>
   </div>
 <p> <% @items.limit(8).each do |item| %>
-  <%= item.title %>
+  <%= link_to item.title, item_path(item) %>
   <% end %>
 </p>
 

@@ -7,7 +7,9 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @bookings = Booking.where(user_id: current_user)
+    @item = Item.new
     @user = current_user
-    @boookings = @user.bookings
+    @bookings = @user.bookings
   end
 end
