@@ -1,16 +1,4 @@
 
-<!DOCTYPE html>
-<html>
-  <head>
-      <meta charset="utf-8">
-      <link rel="stylesheet" href="style.css">
-  </head>
-
-  <body>
-
-
-
-
   <div class="mybanner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://unsplash.com/photos/tvG4WvjgsEY);">
     <div class="container">
       <h1>Style Higher provides <strong>clothes & accessories</strong> to <strong>image-conscious people</strong>.</h1>
@@ -18,13 +6,11 @@
       <%# <a class="btn btn-flat" href="#">Find out more</a> %>
     </div>
   </div>
-</div>
 <p> <% @items.limit(8).each do |item| %>
-  <%= item.title %>
+  <%= link_to item.title, item_path(item) %>
   <% end %>
 </p>
-  </body>
-</html>
+
 
 <%# ###/former user avatar dropdown/### %>
 <%# <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="stylehigher.jpg" alt="user avatar"/> %>
