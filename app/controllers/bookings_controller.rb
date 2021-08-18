@@ -18,4 +18,7 @@ class BookingsController < ApplicationController
     # find user by id and show the result on the view page
   end
 
+  # def show
+  #   @booking = Booking.find(params[:item_id])
+  # end
 end
