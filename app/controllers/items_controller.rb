@@ -19,10 +19,6 @@ class ItemsController < ApplicationController
     if @item.save
        redirect_to @item
     else
-<<<<<<< HEAD
-
-=======
->>>>>>> d98cd0708bb199e8ca24619fb5b54daf3d64b14c
     end
   end
 
