@@ -6,10 +6,12 @@
       <%# <a class="btn btn-flat" href="#">Find out more</a> %>
     </div>
   </div>
+<% if @items.present? %>
 <p> <% @items.limit(8).each do |item| %>
   <%= link_to item.title, item_path(item) %>
   <% end %>
 </p>
+<% end %>
 
 
 <%# ###/former user avatar dropdown/### %>
