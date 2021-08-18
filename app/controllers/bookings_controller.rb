@@ -8,12 +8,16 @@ class BookingsController < ApplicationController
     @booking.save!
 
     flash[:notice] = "You have successfully booked :)"
-    redirect_to item_path(@item)
+    redirect_to dashboard_path
   end
 
-  def index 
-    @bookings = Booking.where(user_id: current_user)
-    # @item = @booking.item_id
-  end
+  # def index 
+  #   # @bookings = Booking.where(user_id: current_user)
+  #   # @bookings = Booking.all
+  #   @user = current_user
+  #   @user.bookings
+  #   # @items = Item.where(item_id: user_id)
+  #   # raise
+  # end
 
 end
