@@ -1,5 +1,9 @@
 class BookingsController < ApplicationController
 
+  def index
+    @bookings = Booking.all
+  end
+
   def create
     @booking = Booking.new
     @booking.user = current_user
@@ -11,7 +15,8 @@ class BookingsController < ApplicationController
     redirect_to dashboard_path
   end
 
-  # def index 
+
+  # def index
   #   # @bookings = Booking.where(user_id: current_user)
   #   # @bookings = Booking.all
   #   @user = current_user
