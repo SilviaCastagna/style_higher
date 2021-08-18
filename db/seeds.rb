@@ -23,7 +23,6 @@ Item.create!(title: "Smelly shirt", description: "Never washed, who has time to 
 # ]
 
 
-
 # [shoes, sun_glasses, jacket, undies, tshirt].each do |attributes|
 #   Item = Item.create!(attributes)
 #   puts "Created #{Item.title}"
