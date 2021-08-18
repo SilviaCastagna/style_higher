@@ -17,9 +17,12 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item.user = current_user
     if @item.save
-      redirect_to @item
+       redirect_to @item
     else
+<<<<<<< HEAD
 
+=======
+>>>>>>> d98cd0708bb199e8ca24619fb5b54daf3d64b14c
     end
   end
 
