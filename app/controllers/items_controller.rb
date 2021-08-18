@@ -17,10 +17,8 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item.user = current_user
     if @item.save
-      redirect_to items_path(@item)
-      #path previously spelt panth
+       redirect_to @item
     else
-    raise
     end
   end
 

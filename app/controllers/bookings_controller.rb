@@ -1,22 +1,24 @@
 class BookingsController < ApplicationController
 
   def create
-    @booking = Booking.new()
+    @booking = Booking.new
     @booking.user = current_user
     @item = Item.find(params[:item_id])
     @booking.item = @item
     @booking.save!
 
     flash[:notice] = "You have successfully booked :)"
-    redirect_to item_path(@item)
+    redirect_to dashboard_path
   end
 
-  def index # TO BE FINISHED (showing the items/id/bookings)
-    @bookings = Booking.find(current_user)
-    # @booking.user = current_user
-    @booking.item = @user_id
-    # find user by id and show the result on the view page
-  end
+  # def index 
+  #   # @bookings = Booking.where(user_id: current_user)
+  #   # @bookings = Booking.all
+  #   @user = current_user
+  #   @user.bookings
+  #   # @items = Item.where(item_id: user_id)
+  #   # raise
+  # end
 
   # def show
   #   @booking = Booking.find(params[:item_id])
