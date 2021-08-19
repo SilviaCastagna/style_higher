@@ -1,4 +1,4 @@
-<h1> What you want to rent? is this working? check it</h1>
+<h1> What you want to rent?</h1>
 
 <%= simple_form_for(@item) do |f| %>
 
@@ -6,6 +6,7 @@
     <%= f.input :title %>
     <%= f.input :description %>
     <%= f.input :brand %>
+    <%= f.input :price %>
     <%= f.button :submit %>
 
 <% end %>
