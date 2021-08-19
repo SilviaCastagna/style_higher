@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new
+    @booking = Booking.new(booking_params)
     @booking.user = current_user
     @item = Item.find(params[:item_id])
     @booking.item = @item
@@ -15,6 +15,10 @@ class BookingsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  private
+    def booking_params
+      params.require(:booking).permit(:end_date, :start_date)
+    end
 
   # def index
   #   # @bookings = Booking.where(user_id: current_user)
