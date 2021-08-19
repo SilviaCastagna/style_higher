@@ -1,1 +1,19 @@
 // Specific CSS for your home-page
+#thisbanner  {
+  background-image: url("banner.jpg");
+  background-size: cover;
+  height: 500px;
+  display: flex;
+  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
+}
+
+container p {
+  color:burlywood
+}
+
+#thisbanner container {
+  align-items: center;
+  font-size: large;
+}
