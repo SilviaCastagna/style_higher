@@ -23,17 +23,15 @@
   <strong>User email:</strong>
   <%= @item.user.email %>
 </p>
-<%# <%= link_to "book now", item_bookings_path(@item), method: :post %>
+
 
 <div class="container">
   <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
   
-<%# Yorick and Silvia: merge the button with the link book now  %>
-    <%= simple_form_for :search, method: "get" do |f| %>
-      <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%# <%= f.button :submit, "Book now", class: "btn btn-primary" %> 
-      <%= button_to "Book this item", dashboard_path, class: "btn btn-primary", method: :post %>
+    <%= simple_form_for @booking, url: item_bookings_path(@item), method: "Post", remote: true do |f| %>
+      <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.button :submit, "Book now", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>

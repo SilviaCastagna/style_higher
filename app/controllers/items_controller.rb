@@ -2,6 +2,8 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   def show
     @item = Item.find(params[:id])
+    # @user = User.find(Item.find(params[:id]).user_id)
+    @booking = Booking.new
   end
 
   def index
@@ -22,7 +24,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item.user = current_user
     if @item.save
-       redirect_to @item
+      redirect_to @item
     else
     end
   end
