@@ -33,12 +33,16 @@
         <%= link_to "Discover", items_path(), class: "nav-link"%>
       </li>
       <li class="nav-item dropdown">
-        <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+      <%= image_tag 'logo.png', class: 'avatar dropdown-toggle', id: 'navbarDropdown', data: {toggle: 'dropdown'}, 'aria-haspopup': true, 'aria-expanded': false    %>
+        <%# <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="../../app/assets/images/logo.png" alt="user avatar" /> %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-        <%# not the right links! %>
-        <%= link_to "Show Bookings", dashboard_path %>
-        <%= link_to "Log Out", root_path, class: "dropdown-item"%>
-        <%# not the right links! %>
+        <% if current_user  %>
+          <%= link_to "Show Bookings", dashboard_path, class: "dropdown-item" %>
+          <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        <% else %>
+          <%= link_to "Log In", new_user_session_path, class: "dropdown-item" %>
+        <% end %>
+
         </div>
       </li>
     </ul>
