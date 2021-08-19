@@ -1,17 +1,17 @@
 
-
 <div class="container">
   <div class="card-container">
-      <% @bookings.each do |booking| %>
+       <% @bookings.each do |booking| %>
       <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title"><%= booking.item.title %></h5>
-        <p class="card-text"><%= booking.item.description %></p>
-        <p class="card-text text-right"><%= booking.item.price %> $</p>
-
+        <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%= booking.item.title %></h5>
+            <p class="card-text"><%= booking.item.description %></p>
+            <div class="row">
+              <p class="card-text text-right col"><%= booking.item.price %> $</p>
+            </div>
+          </div>
       </div>
-    </div>
       <% end %>
   </div>
 </div>

@@ -11,14 +11,16 @@
   <div class="card-container">
       <% @items.limit(3).each do |item| %>
       <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title"><%= item.title %></h5>
-        <p class="card-text"><%= item.description %></p>
-        <p class="card-text text-right"><%= item.price %> $</p>
-        <%= link_to 'Show', item, class: "btn btn-success"%>
+        <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%= item.title %></h5>
+            <p class="card-text"><%= item.description %></p>
+            <div class="row">
+              <%= link_to 'Show', item, class: "btn btn-success col "%>
+              <p class="card-text text-right col"><%= item.price %> $</p>
+            </div>
+          </div>
       </div>
-    </div>
       <% end %>
   </div>
 </div>
