@@ -1,17 +1,20 @@
-
 <h1> Check the latest trends </h1>
 <div class="container">
+  <% number = 0 %>
   <div class="card-container">
-      <% @items.each do |item| %>
-      <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
+    <% @items.each do |item| %>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://source.unsplash.com/collection/9380914" <%number%> alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title"><%= item.title %></h5>
         <p class="card-text"><%= item.description %></p>
-        <p class="card-text text-right"><%= item.price %> $</p>
-        <%= link_to 'Show', item, class: "btn btn-success"%>
+        <div class="row">
+          <%= link_to 'Show', item, class: "btn btn-success col "%>
+          <p class="card-text text-right col"><%= item.price %> $</p>
+        </div>
       </div>
+      <% number += 1 %>
     </div>
-      <% end %>
+    <% end %>
   </div>
 </div>

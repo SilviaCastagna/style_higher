@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  # has_many_attached :photos
+  #doug just wrote this has_many_attached photos so we can upload many photos to an item
   def show
     @item = Item.find(params[:id])
     # @user = User.find(Item.find(params[:id]).user_id)
