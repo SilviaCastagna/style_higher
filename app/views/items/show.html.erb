@@ -1,26 +1,38 @@
-<h1> Confirm your choise </h1>
+<h1> Confirm your choice </h1>
 <p>
-  <strong>title:</strong>
+  <strong>Title:</strong>
   <%= @item.title %>
 </p>
 
 <p>
-  <strong>description:</strong>
+  <strong>Description:</strong>
   <%= @item.description %>
 </p>
 
 <p>
-  <strong>brand:</strong>
+  <strong>Brand:</strong>
   <%= @item.brand %>
 </p>
 
 <p>
-<strong>price:</strong>
+<strong>Price:</strong>
 <%= @item.price %> $
 </p>
 
 <p>
-  <strong>user mail:</strong>
+  <strong>User email:</strong>
   <%= @item.user.email %>
 </p>
 <%= link_to "book now", item_bookings_path(@item), method: :post %>
+
+<div class="container">
+  <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+  
+
+    <%= simple_form_for :search, method: "get" do |f| %>
+      <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.button :submit, "Book now", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
