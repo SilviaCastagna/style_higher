@@ -1,16 +1,11 @@
 
-  <div class="mybanner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://unsplash.com/photos/tvG4WvjgsEY);">
-    <div class="container">
-      <h1>Style Higher provides <strong>clothes & accessories</strong> to <strong>image-conscious people</strong>.</h1>
-      <p>Reinvent your look without spending a fortune.</p>
-      <%# <a class="btn btn-flat" href="#">Find out more</a> %>
-    </div>
+
+<div class="mybanner mt-2 mb-4" id="thisbanner">
+  <div class="container">
+    <h1>Style Higher provides <strong>clothes & accessories</strong> to <strong>image-conscious people</strong>.</h1>
+    <p>Reinvent your look without spending a fortune.</p>
   </div>
-
-<%# ###/former user avatar dropdown/### %>
-<%# <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="stylehigher.jpg" alt="user avatar"/> %>
-
-
+</div>
 
 <div class="container">
   <div class="card-container">
@@ -20,6 +15,7 @@
       <div class="card-body">
         <h5 class="card-title"><%= item.title %></h5>
         <p class="card-text"><%= item.description %></p>
+        <p class="card-text text-right"><%= item.price %> $</p>
         <%= link_to 'Show', item, class: "btn btn-success"%>
       </div>
     </div>
