@@ -25,16 +25,19 @@ class ItemsController < ApplicationController
     # @item = Item.new(params[:item])
     @item = Item.new(item_params)
     @item.user = current_user
+
     if @item.save
       redirect_to @item
+
     else
     end
+
   end
 
   private
 
   def item_params
-      params.require(:item).permit(:title, :description, :brand)
+      params.require(:item).permit(:title, :description, :brand, :photo)
   end
 
 
