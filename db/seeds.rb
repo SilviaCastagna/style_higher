@@ -14,7 +14,7 @@ User.destroy_all
 
 puts "Creating items..."
 
-user_new = User.create!(email:"doug@doug.com", password: "123456")
+user_new = User.create!(email: "doug@doug.com", password: "123456")
 
 # file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
 # user = User.new(title: 'NES', body: "A great console")
