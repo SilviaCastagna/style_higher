@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @item = Item.find(params[:item_id])
     @booking.item = @item
-    @booking.total_price = (@item.price * (@booking.end_date - @booking.start_date)).to_f
+    @booking.total_price = (@item.price * (@booking.end_date.to_date - @booking.start_date.to_date).to_i)
     @booking.save!
 
     flash[:notice] = "You have successfully booked :)"
