@@ -2,7 +2,11 @@
   <div class="card-container">
     <% @bookings.each do |booking| %>
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
+    <% if booking.item.photo.attached? %>
+        <%= cl_image_tag booking.item.photo.key, height: 300, crop: :mpad %>
+      <% end %>
+
+      <%# <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap"> %>
       <div class="card-body">
         <h5 class="card-title"><%= booking.item.title %></h5>
         <p class="card-text"><%= booking.item.description %></p>
