@@ -1,8 +1,11 @@
-<h1> What you want to rent?</h1>
+
 
 <div class = "container">
+  <br>
+  <h1> What do you want to rent?</h1>
+  <br>
+    <%= simple_form_for(@item) do |f| %>
 
-<%= simple_form_for(@item) do |f| %>
 
 
     <%= f.input :title %>
@@ -12,7 +15,7 @@
     <%= f.input :photo, as: :file %>
     <%= f.button :submit , class: "btn btn-success mb-3" %>
 
-<% end %>
+    <% end %>
 <div>
 
 <%= link_to 'Back', items_path, class: "btn btn-primary" %>
