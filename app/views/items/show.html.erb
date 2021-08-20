@@ -2,6 +2,11 @@
 <div>
   <h1> Confirm your choice </h1>
     <br>
+
+    <% if @item.photo.attached? %>
+      <%= cl_image_tag @item.photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+
     <p>
       <strong>Title:</strong>
       <%= @item.title %>
