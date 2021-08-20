@@ -1,4 +1,5 @@
 <div class="container">
+<h1 class="index_title" id="booking_title">Your Bookings:</h2>
   <div class="card-container">
     <% @bookings.each do |booking| %>
     <div class="card" style="width: 18rem;">
@@ -11,10 +12,9 @@
         <h5 class="card-title"><%= booking.item.title %></h5>
         <p class="card-text"><%= booking.item.description %></p>
         <p class="card-text text-right"><%= booking.item.price %> $</p>
-        <p class="card-text text-left">Total: <%= booking.total_price %> $</p>
+        <p class="card-text text-left">total: <%= booking.total_price %> $</p>
         <p class="card-text text-left">Start date: <%= start = booking.start_date.strftime("%d.%m.%Y")%> </p>
         <p class="card-text text-left">End date: <%= finish = booking.end_date.strftime("%d.%m.%Y") %> </p>
-
       </div>
     </div>
       <% end %>
