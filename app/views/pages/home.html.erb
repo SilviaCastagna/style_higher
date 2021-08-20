@@ -4,12 +4,14 @@
   <div class="container">
     <h1>Style Higher provides <strong>clothes & accessories</strong> to <strong>image-conscious people</strong>.</h1>
     <p>Reinvent your look without spending a fortune.</p>
+    
   </div>
 </div>
 
 <div class="container">
   <div class="card-container">
       <% @items.limit(3).each do |item| %>
+      <% raise %>
       <div class="card" style="width: 18rem;">
         <% if item.photo.attached? %>
           <%= cl_image_tag item.photo.key, height: 300, crop: :mpad %>
