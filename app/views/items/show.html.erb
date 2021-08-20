@@ -1,19 +1,12 @@
 <div class="container" style="width: 400px; margin: 0 auto;">
-<div>
-  <h1> Confirm your choice </h1>
-    <br>
 
-    <% if @item.photo.attached? %>
-      <%= cl_image_tag @item.photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
+  <h1 class="mb-3 mt-2"> <%= @item.title %></h1>
+
+    <%= cl_image_tag @item.photo.key, height: 300, width: 400, crop: :fill %>
 
     <p>
-      <strong>Title:</strong>
-      <%= @item.title %>
-    </p>
-
-    <p>
-      <strong>Description:</strong>
+     <br>
+      <strong class="mt-5">Description:</strong>
       <%= @item.description %>
     </p>
 
@@ -24,14 +17,14 @@
 
     <p>
       <strong>Price:</strong>
-      <%= @item.price %>$
+      <%= @item.price %> $
     </p>
 
     <p>
-      <strong>User email:</strong>
+      <strong>User contact:</strong>
       <%= @item.user.email %>
     </p>
-    <br>
+
 </div>
 
   <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
