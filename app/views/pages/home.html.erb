@@ -12,16 +12,16 @@
       <% @items.limit(3).each do |item| %>
       <div class="card" style="width: 18rem;">
         <% if item.photo.attached? %>
-      <%= cl_image_tag item.photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
-          <div class="card-body">
-            <h5 class="card-title"><%= item.title %></h5>
-            <p class="card-text"><%= item.description %></p>
-            <div class="row">
-              <%= link_to 'Show', item, class: "btn btn-success col "%>
-              <p class="card-text text-right col"><%= item.price %> $</p>
-            </div>
+          <%= cl_image_tag item.photo.key, height: 300, crop: :mpad %>
+        <% end %>
+        <div class="card-body">
+          <h5 class="card-title"><%= item.title %></h5>
+          <p class="card-text"><%= item.description %></p>
+          <div class="row">
+            <%= link_to 'Show', item, class: "btn btn-success col "%>
+            <p class="card-text text-right col"><%= item.price %> $</p>
           </div>
+        </div>
       </div>
       <% end %>
   </div>

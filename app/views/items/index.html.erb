@@ -1,13 +1,12 @@
 <h1> Check the latest trends </h1>
 <div class="container">
   <% number = 0 %>
-  <div class="card-container">
+  <div class="card-container" >
     <% @items.each do |item| %>
     <div class="card" style="width: 18rem;">
-    <% if item.photo.attached? %>
-      <%= cl_image_tag item.photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
-
+      <% if item.photo.attached? %>
+        <%= cl_image_tag item.photo.key, height: 300, crop: :mpad %>
+      <% end %>
       <div class="card-body">
         <h5 class="card-title"><%= item.title %></h5>
         <p class="card-text"><%= item.description %></p>
