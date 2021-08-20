@@ -27,7 +27,7 @@ user_new = User.create!(email: "doug@doug.com", password: "123456")
 # items = [
 
 file = URI.open('https://images.unsplash.com/photo-1626947346165-4c2288dadc2a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bmljZSUyMHNob2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60')
-item = Item.create!(title: "Nice shoe", description: "Never used at all, check more", brand: "Cool", user: user_new, price: 350)
+item = Item.create!(title: "Nice shoe", description: "Never used at all, check more we have tons of different options that you can check out", brand: "Cool", user: user_new, price: 350)
 item.photo.attach(io: file, filename: 'shoe.jpg', content_type: 'image/jpg')
 
 file = URI.open('https://images.unsplash.com/photo-1511499767150-a48a237f0083?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80')
