@@ -7,7 +7,10 @@
   <div class="card-container">
     <% @items.each do |item| %>
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/collection/9380914" <%number%> alt="Card image cap">
+    <% if item.photo.attached? %>
+      <%= cl_image_tag item.photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+
       <div class="card-body">
         <h5 class="card-title"><%= item.title %></h5>
         <p class="card-text"><%= item.description %></p>
